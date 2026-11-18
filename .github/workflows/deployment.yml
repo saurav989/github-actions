@@ -2,6 +2,7 @@ name: Deploy Project
 on: [push, workflow_dispatch]
 jobs: 
   test:
+    if: github.ref_name != 'not-main'
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -15,6 +16,7 @@ jobs:
       - name: Run tests
         run: npm test
   deploy:
+    if: github.ref_name != 'not-main'
     needs: test
     runs-on: ubuntu-latest
     steps:

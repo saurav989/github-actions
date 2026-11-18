@@ -19,6 +19,7 @@ on:
         - '.github/workflows/*'
 jobs:
   output-info:
+    if: github.ref_name != 'not-main'
     runs-on: ubuntu-latest
     steps:
       - name: Output event data
