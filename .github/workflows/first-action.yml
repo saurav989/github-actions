@@ -2,7 +2,6 @@ name: First Workflow
 on: workflow_dispatch
 jobs:
   first-job:
-    if: github.ref_name != 'not-main'
     runs-on: ubuntu-latest
     steps:
       - name: Print greeting

@@ -2,7 +2,6 @@ name: Deployment Exercise 1
 on: push
 jobs: 
   deploy:
-    if: github.ref_name != 'not-main'
     runs-on: ubuntu-latest
     steps:
       - name: Get code
