@@ -1,9 +1,22 @@
 name: Events Demo 1
 on: 
   pull_request:
+    branches:
+      - main # main
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'feat/**' # feat/new feat/new/button
+      # developer-1 -> will not get executed 
     types:
       - opened
-  workflow_dispatch:    
+  workflow_dispatch:
+  push:
+    branches:
+      - main # main
+      - 'dev-*' # dev-new dev-this-is-new
+      - 'feat/**' # feat/new feat/new/button
+      # developer-1 -> will not get executed 
+    paths-ignore:
+        - '.github/workflows/*'
 jobs:
   output-info:
     runs-on: ubuntu-latest
